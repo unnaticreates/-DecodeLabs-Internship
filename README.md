@@ -1,6 +1,6 @@
-# 🚀 DecodeLabs Python Development Internship Projects
+# 🚀 DecodeLabs Python Programming Internship Projects
 
-Welcome to my Python Development Internship repository! 👋
+Welcome to my Python Programming Internship repository! 👋
 
 This repository contains the projects I completed during my internship at **DecodeLabs**. Each task focuses on strengthening different Python, Flask, HTML, and CSS concepts while building practical web applications.
 
@@ -9,7 +9,7 @@ This repository contains the projects I completed during my internship at **Deco
 ## 👩‍💻 Intern Information
 
 - **Intern:** Unnati Parmar
-- **Internship:** Python Development Internship
+- **Internship:** Python Programming Internship
 - **Organization:** DecodeLabs
 - **Technology Stack:** Python, Flask, HTML5, CSS3
 
@@ -261,4 +261,4 @@ Through this internship, I gained hands-on experience in developing web applicat
 
 **Unnati Parmar**
 
-Python Development Intern @ DecodeLabs
+Python Programming Intern @ DecodeLabs
