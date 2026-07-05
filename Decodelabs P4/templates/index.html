@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>General Knowledge Quiz</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🧠 General Knowledge Quiz</h1>
+
+    <p class="subtitle">
+        Answer all 3 questions and test your knowledge!
+    </p>
+
+    <form method="POST">
+
+        {% for q in questions %}
+
+        <div class="card">
+
+            <h3>
+                Question {{ loop.index }}
+            </h3>
+
+            <p>{{ q.question }}</p>
+
+            <input
+                type="text"
+                name="q{{ loop.index0 }}"
+                placeholder="Type your answer..."
+                required>
+
+        </div>
+
+        {% endfor %}
+
+        <button type="submit">
+            Submit Quiz
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
