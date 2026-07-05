@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>📝 Task Manager</h1>
+
+        <div class="input-box">
+            <input type="text" id="taskInput" placeholder="Enter a task...">
+            <button onclick="addTask()">Add</button>
+        </div>
+
+        <div class="task-section">
+            <h2>Your Tasks</h2>
+            <ul id="taskList"></ul>
+        </div>
+
+    </div>
+
+    <script>
+
+        let tasks = [];
+
+        function addTask() {
+
+            let input = document.getElementById("taskInput");
+            let task = input.value.trim();
+
+            if (task === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+            tasks.push(task);
+
+            displayTasks();
+
+            input.value = "";
+        }
+
+        function displayTasks() {
+
+            let taskList = document.getElementById("taskList");
+
+            taskList.innerHTML = "";
+
+            for (let i = 0; i < tasks.length; i++) {
+
+                let li = document.createElement("li");
+
+                li.innerHTML = `
+                    <span>${tasks[i]}</span>
+                    <button class="delete-btn" onclick="deleteTask(${i})">
+                        ❌
+                    </button>
+                `;
+
+                taskList.appendChild(li);
+            }
+        }
+
+        function deleteTask(index) {
+
+            tasks.splice(index, 1);
+
+            displayTasks();
+        }
+
+    </script>
+
+</body>
+
+</html>
