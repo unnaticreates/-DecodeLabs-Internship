@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>💰 Expense Tracker</h1>
+
+        <div class="input-section">
+            <input type="number" id="expenseInput" placeholder="Enter Expense Amount">
+            <button onclick="addExpense()">Add Expense</button>
+        </div>
+
+        <div class="expense-box">
+            <h2>Expenses</h2>
+            <ul id="expenseList"></ul>
+        </div>
+
+        <div class="total-box">
+            <h2>Total Spent</h2>
+            <p id="totalAmount">₹ 0</p>
+        </div>
+
+        <button class="clear-btn" onclick="clearExpenses()">
+            Clear All
+        </button>
+
+    </div>
+
+<script>
+
+let total = 0;
+
+function addExpense() {
+
+    let input = document.getElementById("expenseInput");
+    let value = Number(input.value);
+
+    if (value <= 0 || isNaN(value)) {
+        alert("Please enter a valid amount");
+        return;
+    }
+
+    total = total + value;
+
+    let li = document.createElement("li");
+    li.textContent = "₹ " + value;
+
+    document.getElementById("expenseList").appendChild(li);
+
+    document.getElementById("totalAmount").textContent =
+        "₹ " + total;
+
+    input.value = "";
+}
+
+function clearExpenses() {
+
+    total = 0;
+
+    document.getElementById("expenseList").innerHTML = "";
+
+    document.getElementById("totalAmount").textContent =
+        "₹ 0";
+}
+
+</script>
+
+</body>
+</html>
